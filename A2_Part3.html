@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <title>Assignment 2 - Part 03</title>
+</head>
+<body>
+
+    <style>
+        body{
+    background-color: pink;
+}
+
+.first-number{
+    margin: 5px;
+}
+.second-number{
+    margin: 5px;
+}
+.third-number{
+    margin: 5px;
+}
+.sort-numbers{
+    margin: 5px;
+}
+    </style>
+    <div class="first">
+    <h1>Assignment 2 - Part 03</h1>
+    <h2>Sort Three Numbers</h2>
+
+    <div class="first-number">
+    <label for="quantity">Enter the first number</label>
+    <input type="number" id="number-one" name="number-one">
+    </div>
+     
+    <div class="second-number">
+    <label for="quantity">Enter the second number</label>
+    <input type="number" id="number-two" name="number-two">
+    </div>
+
+    <div class="third-number">
+    <label for="quantity">Enter the third number</label>
+    <input type="number" id="number-three" name="number-three">
+
+    <div class="sort-numbers">
+    <button onclick="sortNumbers()">Sort Numbers</button>
+    </div>
+
+    <div class="final-output">
+        <p id="final-numbers"></p>
+    </div>
+</div>
+
+    </div>
+    <script>
+        function sortNumbers(){
+
+
+            let num1 = parseFloat(document.getElementById('number-one').value);
+            let num2 = parseFloat(document.getElementById('number-two').value);
+            let num3 = parseFloat(document.getElementById('number-three').value);
+
+            let numbers = [num1, num2, num3];
+
+            numbers.sort(function(a, b) {return a - b; });
+
+            document.getElementById("final-numbers").innerHTML = "Sorted Numbers: " + numbers.join(', ');
+        }
+    </script>
+</body>
+</html>
